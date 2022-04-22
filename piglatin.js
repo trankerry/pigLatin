@@ -1,5 +1,6 @@
 /*
-Write a function called piglatin that is given a word and expected to translate that word into Pig Latin
+Write a function called piglatin that is given a string representing a word and expected
+to translate that word into Pig Latin and return that translated string back.
 
 - For words that begin with consonants: 
   All letters before the initial vowel are placed at the end of the word sequence. Then, "ay" is added.
@@ -11,7 +12,7 @@ Write a function called piglatin that is given a word and expected to translate 
   "qu" is considered a consonant sound
 
 - For words that begin with vowel sounds
-  Add "way"
+  Add "way" to the end
 
   Examples: 
 
@@ -27,3 +28,7 @@ Write a function called piglatin that is given a word and expected to translate 
 
 */
 
+/**********************  Enter your code below this line **********************/
+
+
+export default piglatin;
