@@ -29,7 +29,41 @@ to translate that word into Pig Latin and return that translated string back.
 */
 
 /**********************  Enter your code below this line **********************/
-
+function piglatin(str) {
+  //set up the vowels
+  let vowel = 'aeiou'
+  //go through the given str and grab everything before a vowel
+  let strArr = str.split('')
+  let front = ''
+  //if the first letter is a vowel then add 'way to the end of it
+  if(vowel.includes(strArr[0])){
+    return str += 'way'
+  }
+  //iterate through given str
+  for(let i = 0; i < strArr.length; i++){
+    //after the first letter, 'Y' becomes a vowel
+    if(i > 0){
+      vowel = 'aeiouy'
+    }
+    //if the curr letter is a vowel stop the loop
+    if(vowel.includes(strArr[i])){
+      break;
+    }else if(strArr[i] == 'q'){
+      //if the letter is a 'q' make sure to bring the 'u' along with it
+      front += 'qu'
+      i++
+    }else{
+      //all the constants to the front variable
+      front += strArr[i]
+    }
+  }
+  //take off the front part of the word.
+  strArr.splice(0, front.length)
+  //push the front part to the end of the word and add 'ay'
+  strArr.push(front,'ay')
+  //join back into a string
+  return strArr.join('')
+}
 
 /**********************  Enter your code above this line **********************/
 export default piglatin;
